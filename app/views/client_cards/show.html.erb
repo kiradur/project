@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @client_card.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @client_card.user_id %>
+</p>
+
+<p>
+  <strong>Many:</strong>
+  <%= @client_card.many %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @client_card.description %>
+</p>
+
+<p>
+  <strong>Deadlines:</strong>
+  <%= @client_card.deadlines %>
+</p>
+
+<p>
+  <strong>Contract:</strong>
+  <%= @client_card.contract_id %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @client_card.action_id %>
+</p>
+
+<%= link_to 'Edit', edit_client_card_path(@client_card) %> |
+<%= link_to 'Back', client_cards_path %>

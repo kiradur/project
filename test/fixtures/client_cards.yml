@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  user_id: 1
+  many: 1
+  description: MyText
+  deadlines: 2020-01-27
+  contract_id: 1
+  action_id: 1
+
+two:
+  title: MyText
+  user_id: 1
+  many: 1
+  description: MyText
+  deadlines: 2020-01-27
+  contract_id: 1
+  action_id: 1

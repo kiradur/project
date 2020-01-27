@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Client Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Many</th>
+      <th>Description</th>
+      <th>Deadlines</th>
+      <th>Contract</th>
+      <th>Action</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client_cards.each do |client_card| %>
+      <tr>
+        <td><%= client_card.title %></td>
+        <td><%= client_card.user_id %></td>
+        <td><%= client_card.many %></td>
+        <td><%= client_card.description %></td>
+        <td><%= client_card.deadlines %></td>
+        <td><%= client_card.contract_id %></td>
+        <td><%= client_card.action_id %></td>
+        <td><%= link_to 'Show', client_card %></td>
+        <td><%= link_to 'Edit', edit_client_card_path(client_card) %></td>
+        <td><%= link_to 'Destroy', client_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client Card', new_client_card_path %>
