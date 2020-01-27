@@ -8,6 +8,7 @@ one:
   deadlines: 2020-01-27
   contract_id: 1
   action_id: 1
+  source_id: 1
 
 two:
   title: MyText
@@ -17,3 +18,4 @@ two:
   deadlines: 2020-01-27
   contract_id: 1
   action_id: 1
+  source_id: 1
