@@ -11230,3 +11230,1283 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.7ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddActivationToUsers (20200130075817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 0[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200130075817"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to CreateUsers (20200127074331)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200127074331_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200127074331"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to CreateClientCards (20200127075531)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "client_cards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "user_id" integer, "many" integer, "description" text, "deadlines" date, "contract_id" integer, "action_id" integer, "source_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200127075531_create_client_cards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200127075531"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddIndexToUsersEmail (20200127120428)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20200127120428_add_index_to_users_email.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200127120428"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddPasswordDigestToUsers (20200127121848)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  ↳ db/migrate/20200127121848_add_password_digest_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200127121848"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddRememberDigestToUsers (20200128085417)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  ↳ db/migrate/20200128085417_add_remember_digest_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200128085417"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddAdminToUsers (20200130072604)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 0[0m
+  ↳ db/migrate/20200130072604_add_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200130072604"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+Migrating to AddActivationToUsers (20200130075817)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 0[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime[0m
+  ↳ db/migrate/20200130075817_add_activation_to_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200130075817"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-30 08:01:47.287498"], ["updated_at", "2020-01-30 08:01:47.287498"]]
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "kira@mail.ru"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "david"], ["email", "kira@mail.ru"], ["created_at", "2020-01-30 08:01:54.404640"], ["updated_at", "2020-01-30 08:01:54.404640"], ["password_digest", "$2a$10$z8Fk/nKE1HLRVf.JVk3LHu51H/wf0vXyLZKTg6DmSd5gm7kQLQE/C"], ["admin", 1], ["activation_digest", "$2a$10$zXpP7GwMLtkLQdUhByH.7..bWO13bR1JNLxxAIBgXG0ERVr.oJM7u"], ["activated", 1], ["activated_at", "2020-01-30 08:01:54.325238"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-1@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Laronda Windler"], ["email", "example-1@railstutorial.org"], ["created_at", "2020-01-30 08:01:54.747794"], ["updated_at", "2020-01-30 08:01:54.747794"], ["password_digest", "$2a$10$KwbTfKcQJ.ccC7kqz/dQ6.l5molbmtlVISZeontWtUaXMO/cUi6h6"], ["activation_digest", "$2a$10$pimpdeIqd022FenrFH.wheCf5rA1RVvCjJzx4aolhjbbqUrTkWoN."], ["activated", 1], ["activated_at", "2020-01-30 08:01:54.678926"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-2@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nerissa Zulauf"], ["email", "example-2@railstutorial.org"], ["created_at", "2020-01-30 08:01:54.886646"], ["updated_at", "2020-01-30 08:01:54.886646"], ["password_digest", "$2a$10$qMj.2mpPLI.yo6vE1PCvtOMEfLIE68bXs6RfQ48R4YuhhZrPU4M2y"], ["activation_digest", "$2a$10$zXYgHCRhEyAV7dNkMMXrQexvfoT74rnLtjp3QmbizZ5KLUbZyhYmS"], ["activated", 1], ["activated_at", "2020-01-30 08:01:54.818468"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-3@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Marshall O'Kon"], ["email", "example-3@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.038505"], ["updated_at", "2020-01-30 08:01:55.038505"], ["password_digest", "$2a$10$8v8HAD/fyCn06tGPFeELce81NB6gIxAg9C6TPYbznESObGeVNKElS"], ["activation_digest", "$2a$10$ePBm/617l.MFeYfRBy1ZF.Y8PfzELp80XBVB9h5r7Bc1CccKDVSQu"], ["activated", 1], ["activated_at", "2020-01-30 08:01:54.967477"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-4@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bonnie Wisozk"], ["email", "example-4@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.257421"], ["updated_at", "2020-01-30 08:01:55.257421"], ["password_digest", "$2a$10$uZhKUPzb0hh0SXbUSt8FlOyFP1wl4xMIv/Ck5t2iPAMcXqWGYi48G"], ["activation_digest", "$2a$10$LsfEWTP9FLvNA7WOLRqVgOKWsyPZcxKJz/HYBu268jG75w6OdN3W."], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.173538"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-5@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Frances Blanda"], ["email", "example-5@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.421339"], ["updated_at", "2020-01-30 08:01:55.421339"], ["password_digest", "$2a$10$dp0O2rl.huCKuuKbTjTfdecJ5rv2.BNZcBI8VHufDrbZO38A9F3wG"], ["activation_digest", "$2a$10$mh99GmyIaKRqYU1J49y6dOYADbyM0P7IUILruYiWTdOeVmedRiDve"], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.345962"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-6@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Faustina Skiles"], ["email", "example-6@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.607599"], ["updated_at", "2020-01-30 08:01:55.607599"], ["password_digest", "$2a$10$F9DecX.C7r.nAnDNiwATSeVA.Os.ZCBgcdBuQJ4Lp2hlOgw5FWRdS"], ["activation_digest", "$2a$10$SFjYLy.EPBMVTx1qgeCDHuX1d4L4UMim7MQreZJOTrUMiYhkEwa4m"], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.531079"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-7@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Johna Wyman"], ["email", "example-7@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.755294"], ["updated_at", "2020-01-30 08:01:55.755294"], ["password_digest", "$2a$10$52cNruG9eRPEj0tDcL98p..XGTV2vcnFZnLZ20i7v4zRz7yxf3ZbG"], ["activation_digest", "$2a$10$lJf4EtpHqH85RriucK8dReA/jo/4VHpwv93J5cUy0tYMmyz0us65e"], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.680690"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-8@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Marcelina Cormier"], ["email", "example-8@railstutorial.org"], ["created_at", "2020-01-30 08:01:55.917523"], ["updated_at", "2020-01-30 08:01:55.917523"], ["password_digest", "$2a$10$of.py9ToAwIV1QBztIX8W.qvD8Wel.8MwYHiZai5MGvynP7v2jmNW"], ["activation_digest", "$2a$10$wqJzuZnJWpN7aGC8AgIgjeBsvn1rSGTwHiQf2hxFUn3tRDAA51nw."], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.828988"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-9@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jae Kovacek"], ["email", "example-9@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.062893"], ["updated_at", "2020-01-30 08:01:56.062893"], ["password_digest", "$2a$10$c5IDbYVUn2ZKkNYidlkwguR8/ubXJDRkI23vmB/ny7728qo5Bdbea"], ["activation_digest", "$2a$10$.Jw43xb/Yh9yjeih2bO8Ge8HbHlQTb8uxAV0cYRmJG068Ey5/zTvS"], ["activated", 1], ["activated_at", "2020-01-30 08:01:55.988010"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-10@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Venice Vandervort IV"], ["email", "example-10@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.208252"], ["updated_at", "2020-01-30 08:01:56.208252"], ["password_digest", "$2a$10$NTZsR8GGRHJw63TcBftFjO5qvT8f3APSVqo9W8wLddFdy1I6hw0uS"], ["activation_digest", "$2a$10$TrLY2q3ceBikkyRtC5RpCuUMAMVJwKBACGmZYcpdRaTNNtPkdaCfi"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.133645"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-11@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Wen Kuhn DDS"], ["email", "example-11@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.352533"], ["updated_at", "2020-01-30 08:01:56.352533"], ["password_digest", "$2a$10$Vn.UG2HOJgfh/E4FZjsIwuedqp5/qjETBpWYD1FzM3TAPQhtiDIQW"], ["activation_digest", "$2a$10$X17/a4/pQSNwJKjlq4PrmeSBqPARwdQrPELGAlXFqESKoGQxG6mhi"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.279475"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-12@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gabriel Moore"], ["email", "example-12@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.510418"], ["updated_at", "2020-01-30 08:01:56.510418"], ["password_digest", "$2a$10$kjgWke1yxLOVFf.ECfPtieAySw/6ypbid2v03Dr1I/jDveIq9uz46"], ["activation_digest", "$2a$10$69mDAYxwbtv6QCNf4t38B.f0FBiSiM2YHFDW4m0hSP1Fo3ZF2NLYW"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.424588"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-13@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jamaal Gottlieb"], ["email", "example-13@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.661764"], ["updated_at", "2020-01-30 08:01:56.661764"], ["password_digest", "$2a$10$X4t/H5UDAa8T0FZMiXHP..lDILkCkUD2s6O.WRMGUP0HaXsYEiHgC"], ["activation_digest", "$2a$10$Y4uNzl4SGLa/f86m1FWzAeSMfmuZdteIKniOKT4Vfh7Q9hk5XD2Y2"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.588131"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-14@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dr. Jacque Powlowski"], ["email", "example-14@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.812093"], ["updated_at", "2020-01-30 08:01:56.812093"], ["password_digest", "$2a$10$tO9sbb.5FsRSX4Jnnyt2eeSCbG6eIwLP/0IQisZJ2E07//BYX2oXu"], ["activation_digest", "$2a$10$tvRjXiCrLEDHjdK/HFjrM.3pvJX/X/m8Bm/br5kYVCWUzJCb4xoSe"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.735163"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-15@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Antonina Konopelski"], ["email", "example-15@railstutorial.org"], ["created_at", "2020-01-30 08:01:56.964348"], ["updated_at", "2020-01-30 08:01:56.964348"], ["password_digest", "$2a$10$PJEv7qcNT8phszBzMYQwH.cJYeH0qMlrgTw9ZDC00Z/zIW9RED/LK"], ["activation_digest", "$2a$10$M/aUSn78xMoPbuM/UFty.ObST6lJtHuIyRVgVfgDDDnETacjzs.ti"], ["activated", 1], ["activated_at", "2020-01-30 08:01:56.888823"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-16@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Patti Mante I"], ["email", "example-16@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.114825"], ["updated_at", "2020-01-30 08:01:57.114825"], ["password_digest", "$2a$10$.9C2BVUQumrEWJOhmxBzsOnp08M0ZfgYx/1rmer4ED5AybWRU45Hm"], ["activation_digest", "$2a$10$FKLWpajIxvEbbpv34WYni.t/urqxRG5KgMlP/M3solwczalyGhuEu"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.036882"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (30.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-17@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Monty Deckow"], ["email", "example-17@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.290667"], ["updated_at", "2020-01-30 08:01:57.290667"], ["password_digest", "$2a$10$TRgE6gMem4YaevY9tjGFAu1TCami.Wcg1Jz9Tr7yJ5CZjzfwtzH2y"], ["activation_digest", "$2a$10$Pl7GEfkqUVRsdC5dxTySJOD80/AOn/cffZYbMf7KTTLP/9ZzYkJnG"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.215721"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-18@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Kym Sawayn"], ["email", "example-18@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.447752"], ["updated_at", "2020-01-30 08:01:57.447752"], ["password_digest", "$2a$10$J8VDBWm/rPyX6QA5P1EvfeN9.6RZ.1CNjEHkGL8HtkeawSaznVtXy"], ["activation_digest", "$2a$10$8uqHMgxqnXjUKFDAAgAPk.tL45l.XnpbBelnmPN5u2FKSABjVgfFO"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.373672"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-19@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Tajuana Bartell"], ["email", "example-19@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.604044"], ["updated_at", "2020-01-30 08:01:57.604044"], ["password_digest", "$2a$10$47TOYZQZAj6FGxf4rMX0j..npKomCoHqPUDt1d8cXe0q19.i78Cc6"], ["activation_digest", "$2a$10$VfQHa7piLebqR/GNNXfTmO9SvN.21XQevE1Y4GDg6d62AGRkdQRNO"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.532995"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-20@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gale Mosciski DVM"], ["email", "example-20@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.762212"], ["updated_at", "2020-01-30 08:01:57.762212"], ["password_digest", "$2a$10$St7ihJ01T1D4qJph0WOtXuglyGbUJcj3v7q6AHrgtNBv5eQwlbjDO"], ["activation_digest", "$2a$10$G31g0MfNjkK/UMsAErUxmuOCel8cmQlAv.Et..CxbOd4HCyL1a6oK"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.692096"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-21@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dr. Maris Anderson"], ["email", "example-21@railstutorial.org"], ["created_at", "2020-01-30 08:01:57.908541"], ["updated_at", "2020-01-30 08:01:57.908541"], ["password_digest", "$2a$10$aFR845.7K7Mhijn1vmELCuUhyHyZakpyzmW6tWdMMI/KYbv.06e3a"], ["activation_digest", "$2a$10$iOGM36eOsXvUXoR3KwJK7ON8SZYztFflS992N6pMbloWLi9pEB/2S"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.833630"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-22@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Maribel Franecki Sr."], ["email", "example-22@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.054180"], ["updated_at", "2020-01-30 08:01:58.054180"], ["password_digest", "$2a$10$YT1Op170DpizdGlu6YIdyeHvPbxBdRzlHZzOgXXvVuL38FKt7ugXS"], ["activation_digest", "$2a$10$QenrFCSjQc7gJpt7UqCn9.goI35SLn6SE1Be63CkHwNIxfNPnSHFe"], ["activated", 1], ["activated_at", "2020-01-30 08:01:57.979452"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-23@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Palma Larkin Jr."], ["email", "example-23@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.215941"], ["updated_at", "2020-01-30 08:01:58.215941"], ["password_digest", "$2a$10$NYTC9eZ8w34/AS4ovVK5i.opNIq/qQYbvZLk9dPZUQ3omFV2MFSc6"], ["activation_digest", "$2a$10$30CmR0HRutFZ/oTuqkkDFujxiGNPDJx08cg.xxLmvBP3/WQcUHDQC"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.143150"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-24@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Salley Bednar III"], ["email", "example-24@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.373278"], ["updated_at", "2020-01-30 08:01:58.373278"], ["password_digest", "$2a$10$Jhd86i.qU72HQ8Talp9G7uRmGd6zTzBkppHkTmIAOcQO/5kteTpPK"], ["activation_digest", "$2a$10$2NoMN1Js98lbiUWCNBrpt.B9v2ShgRFDvw71tADvbrvaHQAUG7rTi"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.301619"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-25@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pamela Rohan"], ["email", "example-25@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.514717"], ["updated_at", "2020-01-30 08:01:58.514717"], ["password_digest", "$2a$10$mEiAbh.lTpHUc2DZ/bAcRek3LLEH.H/PvwH7tBaJDMKl1UpZzqECm"], ["activation_digest", "$2a$10$HITjYm7X6OoHl2blHxkBT.GzqVXCM8/G9ev3sCSbKrsBlX5fcSqTS"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.444759"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-26@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Emile Ernser"], ["email", "example-26@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.684532"], ["updated_at", "2020-01-30 08:01:58.684532"], ["password_digest", "$2a$10$RImxTS.oekYLSYpoVIP91evj6F3hZEIxiH6tCFoupxRNUrh/USDXe"], ["activation_digest", "$2a$10$EqL1POxXfdxDWo2ubAuh4Oq/Rfq5zcc.VE6a/qVDv8gwpFCpJ3kB2"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.585695"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-27@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dillon Reynolds"], ["email", "example-27@railstutorial.org"], ["created_at", "2020-01-30 08:01:58.847853"], ["updated_at", "2020-01-30 08:01:58.847853"], ["password_digest", "$2a$10$lFUTY4bd8PkuOM1z9Hf/Cu5ycb7XF647Hiw8IK0U77afWJKVGKQsu"], ["activation_digest", "$2a$10$PSQ33CIotZD1CfmHVck3qOHQYmbBBx7KdwhkUDp93yAJ1AUuNjqKe"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.764407"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-28@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Manda Russel PhD"], ["email", "example-28@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.005497"], ["updated_at", "2020-01-30 08:01:59.005497"], ["password_digest", "$2a$10$Y6WXyAIyfnmN9FbbYQHQLuovot2hToKiEAbtl205vk0eiaOAyy4cG"], ["activation_digest", "$2a$10$2DZZcD1mfyqXzUbajDD8YuZWTdRxYUjpTbM55OH6iG5xEpX1bRmPO"], ["activated", 1], ["activated_at", "2020-01-30 08:01:58.935225"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-29@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Breanna McCullough"], ["email", "example-29@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.163208"], ["updated_at", "2020-01-30 08:01:59.163208"], ["password_digest", "$2a$10$tsf5ZHOAVij/xiGaVIEFLegVzoGkgfQpeTCkXJhn6MpIleggvzPP."], ["activation_digest", "$2a$10$n0xa2ZGDMAHqhYL1he7tWekbKzHMrOnZTbNpwN5H43jNXNl8kylKa"], ["activated", 1], ["activated_at", "2020-01-30 08:01:59.091911"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-30@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Amal Keebler"], ["email", "example-30@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.343564"], ["updated_at", "2020-01-30 08:01:59.343564"], ["password_digest", "$2a$10$af3BVZR9CDBEBkSt7U8VfuN0wtB/rSuOzFYxttvUJwJ4Ik8GMiwTu"], ["activation_digest", "$2a$10$XLeVy2x8EE/xaxe6ZKohhu4zy/pPUlm40mo3Xfqo9OmISr2lmlr.O"], ["activated", 1], ["activated_at", "2020-01-30 08:01:59.248818"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-31@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Efrain Brakus"], ["email", "example-31@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.509659"], ["updated_at", "2020-01-30 08:01:59.509659"], ["password_digest", "$2a$10$SbowSgC59.zOc7HRPdt3b.hWxVAuASTX0NMiuymwR/g2RmVFyP81y"], ["activation_digest", "$2a$10$.lmKqzZdebFqVhBj7zZ9h.yrPPYntXXOop7fpW3Vvf1eUtk0qk05."], ["activated", 1], ["activated_at", "2020-01-30 08:01:59.423674"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-32@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lulu Dach"], ["email", "example-32@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.747498"], ["updated_at", "2020-01-30 08:01:59.747498"], ["password_digest", "$2a$10$D9jJLmpmF1qH5SvCBiF0T.JxL5UcWLvnaOdOHUoYW7jsfYAL4OFju"], ["activation_digest", "$2a$10$z61cr5rdyRT9lueN5xGpiuhOqU.gKMW35N9PFpfBqFoZfAyczH2/S"], ["activated", 1], ["activated_at", "2020-01-30 08:01:59.603725"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-33@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mike Considine"], ["email", "example-33@railstutorial.org"], ["created_at", "2020-01-30 08:01:59.991536"], ["updated_at", "2020-01-30 08:01:59.991536"], ["password_digest", "$2a$10$gVcGvj/QcP7hIpQTSSLLGu/iup2APwK9lOqkP0fRryKyw8ofb9EDC"], ["activation_digest", "$2a$10$BoI/G1IZBMBqNXO2fAhNueCsObq/Z0upM8w9HO5H3u41W3omR8u52"], ["activated", 1], ["activated_at", "2020-01-30 08:01:59.897763"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-34@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Gregorio Weimann"], ["email", "example-34@railstutorial.org"], ["created_at", "2020-01-30 08:02:00.175272"], ["updated_at", "2020-01-30 08:02:00.175272"], ["password_digest", "$2a$10$n4i284inog8MEcHI6.NntuGzz.d9wnUMsl0acQo8dha2u6s2PJNxK"], ["activation_digest", "$2a$10$OksYZf7uxNGNlkxXpRJlkupV/sgpjKJUtwlZu..SeT3sPnjPE8hLG"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.090624"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-35@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Simonne Raynor"], ["email", "example-35@railstutorial.org"], ["created_at", "2020-01-30 08:02:00.364014"], ["updated_at", "2020-01-30 08:02:00.364014"], ["password_digest", "$2a$10$m8oCG84rzQVOke6NE302AuPeyd8a6MC1dLRWMTP04abVd6MUS7BKC"], ["activation_digest", "$2a$10$1rv0VmzhxEnkjb6r.GQyz.ZFO3Nu0.pFdnT56WRlVsLPsun5YprGS"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.275707"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-36@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Otha Friesen DVM"], ["email", "example-36@railstutorial.org"], ["created_at", "2020-01-30 08:02:00.541775"], ["updated_at", "2020-01-30 08:02:00.541775"], ["password_digest", "$2a$10$mMDnZe1hOqN4ktZHxGDVZOsdAc3gy3fDk1YUqRnnc85BhZPZlu1ei"], ["activation_digest", "$2a$10$vb.YAo6zJCLS8H6aIaeHU.8qOfnXhj0q0Lp7/VU9BM3Yx3w5N5Bzi"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.456630"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-37@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Carmine Welch III"], ["email", "example-37@railstutorial.org"], ["created_at", "2020-01-30 08:02:00.704622"], ["updated_at", "2020-01-30 08:02:00.704622"], ["password_digest", "$2a$10$1AbiPuCU/.ZbmO7flw6zjOslOLHiS.rjk8wXOdPqh7yR4f53P/u8W"], ["activation_digest", "$2a$10$IJC8FRL7aPrZz5FVq6lZpeSyNr.A1ZX.zCrBlQUCBC/8L391UYkIK"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.622975"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-38@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Lorri Stanton"], ["email", "example-38@railstutorial.org"], ["created_at", "2020-01-30 08:02:00.859624"], ["updated_at", "2020-01-30 08:02:00.859624"], ["password_digest", "$2a$10$9T/BwQib37os.DmueWhdUuUrOAn/0wG3Iw10uzQV5Rql1x7d5h8Ze"], ["activation_digest", "$2a$10$uXnw4xJyxuVbRUJGMyDFXeAIJz3uzrgydEoRWw82iIWNgiESmmEMe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.783630"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-39@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Hollis Torp"], ["email", "example-39@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.024628"], ["updated_at", "2020-01-30 08:02:01.024628"], ["password_digest", "$2a$10$RYzbxCjsQUHsh44PASum.OJMLbVGFOGtNj9foN8btCPo0Hpg4ZfDK"], ["activation_digest", "$2a$10$SCLeJiLgPWIDMywjqINJl.rNRyAPUQgMRrHhVf5EdM5NAz5atCNfC"], ["activated", 1], ["activated_at", "2020-01-30 08:02:00.951340"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-40@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hoa Ebert"], ["email", "example-40@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.183552"], ["updated_at", "2020-01-30 08:02:01.183552"], ["password_digest", "$2a$10$h1fEywH3rlcgAVd0rs2VvOlYRpTzV9dgGAvJc4UOHJI8uFOzo/H56"], ["activation_digest", "$2a$10$6fGV94uMs97NwkSREJGft.aW1/xMAm0bfsg2583NmRigCwizD451K"], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.103992"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-41@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alycia Ernser"], ["email", "example-41@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.342314"], ["updated_at", "2020-01-30 08:02:01.342314"], ["password_digest", "$2a$10$cstiP8spLP39pGc5XiSUH./iSJMRVtoACfqjAe.u8EcSr2xSrKgAS"], ["activation_digest", "$2a$10$usdNuXvXk5ZVIfTM6PHUxeFgK0f59LAIdRi/JEIToGOP4VauJ5BUe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.262531"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-42@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Parthenia Effertz"], ["email", "example-42@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.485808"], ["updated_at", "2020-01-30 08:02:01.485808"], ["password_digest", "$2a$10$CrXOMz40SwLdSmtMNTqKgOsMnv9kYHtGOMZVwaGs2ENAq7yROirqC"], ["activation_digest", "$2a$10$bWfdc2gSuUacf8XABBHSVeMe2auMF/JEQH1ELoy..VFAVGAxLBLRm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.413063"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-43@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Karri Schamberger Sr."], ["email", "example-43@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.635278"], ["updated_at", "2020-01-30 08:02:01.635278"], ["password_digest", "$2a$10$RjkBx8RVbx7Kp4MzxpVPb.mrfvQkXI/3eQ0d4LQWb7uQO.ZN49pom"], ["activation_digest", "$2a$10$XsAOfS2XDSmrZaWt7H0oO.uxnp3j9TrRzi.Ic2ao83.91ePT1KxBm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.563246"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-44@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Earnestine Boyle V"], ["email", "example-44@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.786260"], ["updated_at", "2020-01-30 08:02:01.786260"], ["password_digest", "$2a$10$x5XrWj6DFhiY1BMdvlSWtecWaT/j2R5Oh73z5SsQh3vFoW4xOhTP."], ["activation_digest", "$2a$10$0c9PKzXAG.YfkN8Q9E.dLeBOzf1ShRHv8BXUgDR9.PjdnyU0ylFP2"], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.714170"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-45@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sherley Jerde"], ["email", "example-45@railstutorial.org"], ["created_at", "2020-01-30 08:02:01.939984"], ["updated_at", "2020-01-30 08:02:01.939984"], ["password_digest", "$2a$10$IGw0HMI8OcXSzylKRnQKseits.ipKSSWZGfKDb1LSH40JRcJlazYe"], ["activation_digest", "$2a$10$IpFYYk0UuQzRnpCjOhaPb.oBPAO2nqml2719VHC2nHDTL97NiOn6."], ["activated", 1], ["activated_at", "2020-01-30 08:02:01.866703"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-46@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jerrell Buckridge DVM"], ["email", "example-46@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.095469"], ["updated_at", "2020-01-30 08:02:02.095469"], ["password_digest", "$2a$10$qhRNw0HaGwfczNvp.2kybecAnFga36d58n13if9a9THAHoFjZk8V2"], ["activation_digest", "$2a$10$lSyHFkLSbUXs5PDKfVGv5uLyjARttmDmN3xrCOL4GXSQf3j3rQtqi"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.021517"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-47@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Misti Crooks"], ["email", "example-47@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.246958"], ["updated_at", "2020-01-30 08:02:02.246958"], ["password_digest", "$2a$10$ucZ.zrCoUmfhc89R.wVosucq5iRTBie0Ga7iQa.R.BVWmQDqAeNwe"], ["activation_digest", "$2a$10$EoVuHA4GVqV5uKih9hI5/O4dqrZ2mQAp0aBMcSc.AdX/EafBDwO3W"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.175236"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-48@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pedro Welch"], ["email", "example-48@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.404250"], ["updated_at", "2020-01-30 08:02:02.404250"], ["password_digest", "$2a$10$W3gBSatGnLSQqzCqyowOvumrk.844knj79O88jmup40n9OULrWsCK"], ["activation_digest", "$2a$10$hgt3aegserstlkwsmk4vxOIwxlp3mIWRYe1bazWBdo1P.JMuDXo1C"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.332873"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-49@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tisha Corkery"], ["email", "example-49@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.568085"], ["updated_at", "2020-01-30 08:02:02.568085"], ["password_digest", "$2a$10$pk8Ju5GlsVk89hFsyyQL2.yykYD1mD8JyDZ.BMR.BHpNlgfbMYc56"], ["activation_digest", "$2a$10$LQGc01yep21eVjEgMhM3Pe/1oPeIWmg9e66PjF0VsAJtBzi1yKr0G"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.494001"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-50@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Oliva Haley"], ["email", "example-50@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.737123"], ["updated_at", "2020-01-30 08:02:02.737123"], ["password_digest", "$2a$10$oWkWnIVjr3stOKtY8kEH3uLoWyDtOZz0A7vfXvRMvn0dbLdom9Xui"], ["activation_digest", "$2a$10$cEmKxHqk3hTA4yPsHaBVdeYq/JCfXPA5dxfz4Bh/nXBnqV4k.ywua"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.657609"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-51@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Krissy Satterfield"], ["email", "example-51@railstutorial.org"], ["created_at", "2020-01-30 08:02:02.893745"], ["updated_at", "2020-01-30 08:02:02.893745"], ["password_digest", "$2a$10$So4/aCr5IplzsIihyg49oefQWhzyZJc1FYpO21qC0.X4pIJTkoccC"], ["activation_digest", "$2a$10$w99/q8ry5KMY7gs5q2qTl.q/Pf/EWNyamNrNdGdsiR7BXJl4LAA76"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.822713"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-52@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Mandi Halvorson"], ["email", "example-52@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.044812"], ["updated_at", "2020-01-30 08:02:03.044812"], ["password_digest", "$2a$10$7cPMYv1GLg7rPRd8IE95Ae2xUsBqC9Ihz0b50TVL0JFqoVEoojZsG"], ["activation_digest", "$2a$10$mOIDZC67XG81j6QNfhC5jOmJnsSfmAYManIspb6znwybuCXzKuNpi"], ["activated", 1], ["activated_at", "2020-01-30 08:02:02.971601"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-53@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sung MacGyver"], ["email", "example-53@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.196568"], ["updated_at", "2020-01-30 08:02:03.196568"], ["password_digest", "$2a$10$00kdds2UAAh3m3SWilAlIOtTeDPjCJgS9OI5es9aQtVcE1RIkzNee"], ["activation_digest", "$2a$10$rdFL6sg1.nCP3KQy22TsM.LOFV147cF3nveHqc6QEZ01GxSE2JxlG"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.123493"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-54@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shawnda Ebert"], ["email", "example-54@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.342605"], ["updated_at", "2020-01-30 08:02:03.342605"], ["password_digest", "$2a$10$iKGv.TSi1BB5AzvkKPzffuUlcbUUTPw8zYSq7rsFULbdR5WXaAcxW"], ["activation_digest", "$2a$10$kn.sVZhAWKbi9aOoUWcY3.UJ1RDyO4GJgQlmRihQ1S4PKmq5kvGoa"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.268251"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-55@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Dominick Stoltenberg"], ["email", "example-55@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.502894"], ["updated_at", "2020-01-30 08:02:03.502894"], ["password_digest", "$2a$10$JE7/a4B/N3jehLs52RFuceO3lh6umnUc56TNDc9Ob1FxKE7c.a.AS"], ["activation_digest", "$2a$10$1yfzE.KNzos/i/IanhHeXOQZPAZgwMcPj2LKILlb4TUYW86DZgYha"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.428332"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-56@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Josiah Cormier"], ["email", "example-56@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.657847"], ["updated_at", "2020-01-30 08:02:03.657847"], ["password_digest", "$2a$10$vZ0iF4wiRcK7MG4vV1UunefB8um.vWEKDdUO8AkU7gLa4pqN8p2Ru"], ["activation_digest", "$2a$10$GC1RV1IlcMXiMasafQzfCeA8TYjvvc9cvpGAU.eQTfHe10C/t8Zhe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.587959"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-57@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jonell Brakus"], ["email", "example-57@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.807070"], ["updated_at", "2020-01-30 08:02:03.807070"], ["password_digest", "$2a$10$JASzYbYzAG2pXpSmKbXwEOt852yPqYO9/5dMJZ4j2aBWOIrh7oPQq"], ["activation_digest", "$2a$10$hh4fm9rVi4Axs1Y/dQigKefMM7NS6xvQK20O8TgsIpaHLckbregha"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.736279"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-58@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alyce Von"], ["email", "example-58@railstutorial.org"], ["created_at", "2020-01-30 08:02:03.963793"], ["updated_at", "2020-01-30 08:02:03.963793"], ["password_digest", "$2a$10$iVO2JUfa5qmqCYvBxNcIIOEznSvmCLHYD1A6h0TKgy53u1I.PPMqe"], ["activation_digest", "$2a$10$zWbLiBzWIe9Vf1jQ5NsePOWj48rwmvte29FdZ9vqOrj2Sz9a9UOSa"], ["activated", 1], ["activated_at", "2020-01-30 08:02:03.886827"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-59@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Jamaal Pollich"], ["email", "example-59@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.118607"], ["updated_at", "2020-01-30 08:02:04.118607"], ["password_digest", "$2a$10$/NXSG4kc2m/JgxSupn06ceO/RDJTh8dDcF5KIVmiAXUg0nKtSMlCy"], ["activation_digest", "$2a$10$gfnac4GPJ8JKnTfAMkDGtOsDe5I6XiZd0xxLz08YIL3r6YW2fXfkm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.043278"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-60@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Karry Rodriguez"], ["email", "example-60@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.284683"], ["updated_at", "2020-01-30 08:02:04.284683"], ["password_digest", "$2a$10$7X3iEH1Mcvj/KZH9OdYhCePynzluTIsVPXiCCjsZBRWk8cyfPcIRW"], ["activation_digest", "$2a$10$l6D8uOnxBKKvT1kY9ZXmpePGJyydFW4MpS5tgrvusLPQmyI/U9KvO"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.211306"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-61@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lane Langworth I"], ["email", "example-61@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.441590"], ["updated_at", "2020-01-30 08:02:04.441590"], ["password_digest", "$2a$10$GeS5Yvj4QK8Eqh5mVNsZ3eSLYCmwCmSycoosdNiYYbQpI71Z.9bKW"], ["activation_digest", "$2a$10$pHpy4dsQaiyrgCfqKLslwOk8qz5QiabGbcR2YZWCA/nRdRcrEBWQu"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.367590"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-62@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bobby Vandervort"], ["email", "example-62@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.589866"], ["updated_at", "2020-01-30 08:02:04.589866"], ["password_digest", "$2a$10$Vee/AA45/THi9HPLSsPwMOZV99NkNMdIr5oEiYmn6zcWcPc6csrsy"], ["activation_digest", "$2a$10$xImvjx3pr4NyN4jgl.8/7uSfoEvQhz3LxDhy09uEPrRV9kiW5xO8m"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.514796"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-63@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Dominga Schaefer"], ["email", "example-63@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.749597"], ["updated_at", "2020-01-30 08:02:04.749597"], ["password_digest", "$2a$10$IGAWvyQKLnrDpJESQF7A1unkPtjunZaoMeIFQAnhms/cqdkN1Knee"], ["activation_digest", "$2a$10$2jUFSfyES/cNymVKN5GkXuRWU46QZB703/.oKtNtoeI1BrxxuI4Ju"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.673040"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-64@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Irving O'Hara"], ["email", "example-64@railstutorial.org"], ["created_at", "2020-01-30 08:02:04.899388"], ["updated_at", "2020-01-30 08:02:04.899388"], ["password_digest", "$2a$10$jQ/E9Mg6JC0.Xughuzh./.8t/MBqyqiN9PTR4qy58awM6nFhgfKVO"], ["activation_digest", "$2a$10$hX/OspExfRgFgQCrkam1yugOyBz4MbtVs2pKdmF6GW257OmqgErsK"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.822536"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-65@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Macie Pfeffer"], ["email", "example-65@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.047529"], ["updated_at", "2020-01-30 08:02:05.047529"], ["password_digest", "$2a$10$vE2W8xndchEGaAg94T6lr.nvx97bZ0rR5IZe9laJVOY1ubDnO4zN."], ["activation_digest", "$2a$10$Kx6T5M0ptw9/0w6rauZIpuXeSmxzJz3QtKxuBVK2hTG.ZhGeGDCZm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:04.972699"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-66@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Efrain Daugherty Jr."], ["email", "example-66@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.211467"], ["updated_at", "2020-01-30 08:02:05.211467"], ["password_digest", "$2a$10$Voy186AgLutjU42RYfbTauTar7zu2NfL9jhFiG4V5fTJI8Dd8KsVy"], ["activation_digest", "$2a$10$ZglwdGxVOgN0XHW7KSeCje4voTFGP9sGmU34.0XdZ4inTgz62oE0O"], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.130379"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-67@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hugh Ernser PhD"], ["email", "example-67@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.383144"], ["updated_at", "2020-01-30 08:02:05.383144"], ["password_digest", "$2a$10$Tcwgmp8aMIHMb1hlZq57Ke7WcSWDjRadX6N1QyU/n3lvXWXBwUvva"], ["activation_digest", "$2a$10$uU2ZToXU0yf3isml98uoueYoSQMsPfUBN2j9m7UesLZs1THxSZNHG"], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.308997"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-68@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Matthew Stehr"], ["email", "example-68@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.540740"], ["updated_at", "2020-01-30 08:02:05.540740"], ["password_digest", "$2a$10$Rstd/mxzLqBf4HJprCh2Y.icLFN5T495bp20lnhaISlEZYPYnW7pO"], ["activation_digest", "$2a$10$fHdBD5cwO84103JAO716OewXSa5sdO9knm3nlMWG8LH8QKF98B9k."], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.469412"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-69@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Ashlee Kessler"], ["email", "example-69@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.688131"], ["updated_at", "2020-01-30 08:02:05.688131"], ["password_digest", "$2a$10$uMcDXL7z2pMTJtecheHYdumnKcpv9CUyCRXEjXIKz7T6n8eksUS8."], ["activation_digest", "$2a$10$pLyhxHX4snLsehmQWkhSjuFJznetwXRnd.ZmewO9tI.KVfGB66v4e"], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.612012"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-70@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tarra Treutel III"], ["email", "example-70@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.833161"], ["updated_at", "2020-01-30 08:02:05.833161"], ["password_digest", "$2a$10$vbnSAZyn80MRvbf9z0KnAOoTVl9nOFeRoJo.Ai82LcI2nnkbsHuAi"], ["activation_digest", "$2a$10$Hce7VuidydiM7HzVtq9QK.ejZYJa.LLto.lnhSk.8RG5CIntJdJay"], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.759071"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-71@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alonzo Schmeler"], ["email", "example-71@railstutorial.org"], ["created_at", "2020-01-30 08:02:05.993884"], ["updated_at", "2020-01-30 08:02:05.993884"], ["password_digest", "$2a$10$tt7Q0jGceCvPJiXn4iszK.axa1DaFNF836VPg6zzEAkLVFpWIl/qy"], ["activation_digest", "$2a$10$o9ovLSjMVmIkTY58vSvPeObpfbMVIIewlzN6uVBRqi/laK2J7SLqC"], ["activated", 1], ["activated_at", "2020-01-30 08:02:05.923995"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-72@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shaniqua Bailey"], ["email", "example-72@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.150163"], ["updated_at", "2020-01-30 08:02:06.150163"], ["password_digest", "$2a$10$ruydU1Uqw/lvFEpabqwb0Odwse24oRTD9XQkph5Q4fpS07qkp8mla"], ["activation_digest", "$2a$10$wFaG2zl84EHp2GlWZcSWPeurhd/AqRQ8owMc2u.nfinl5m4W0Gp9."], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.080613"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-73@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Leisha Herzog"], ["email", "example-73@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.292583"], ["updated_at", "2020-01-30 08:02:06.292583"], ["password_digest", "$2a$10$cg6J7Hcyaw88iDK/iDxG4.tQZZuZbgmp/cLtGe6Vfn5Z2o0pOMndC"], ["activation_digest", "$2a$10$jsGQY8LJZWNZt1ge8Gvp..HMQS0jXMetP6HFR19x1peFfPkqEr6xm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.219937"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-74@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Halina Schroeder"], ["email", "example-74@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.437389"], ["updated_at", "2020-01-30 08:02:06.437389"], ["password_digest", "$2a$10$OvXOJQXkVlOxVw3VFod/TeLPuNpIBTi6Wod9S9Sr4gapKnED1ZEbm"], ["activation_digest", "$2a$10$FTp1cWoTjIeV8U.euUr.Juq7o.60e63q/mqk/mCXOKqlkfHf1MVu6"], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.365307"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-75@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jasper Greenfelder"], ["email", "example-75@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.592164"], ["updated_at", "2020-01-30 08:02:06.592164"], ["password_digest", "$2a$10$Rc2uMQvxOlq6/kkVHtEKFemw6OrMUDUcDhD0jdN3rLaCf7.Vs3EE6"], ["activation_digest", "$2a$10$v.4MqTvZ8XevYKRiZDHPK.BJjw5TU83lJrTtLqauvjFa09kSmbV7u"], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.522542"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-76@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Thu Leannon"], ["email", "example-76@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.744430"], ["updated_at", "2020-01-30 08:02:06.744430"], ["password_digest", "$2a$10$.oXbM1H5fYaoJiqakEk6yO9nzt6Tsx5aKuznDAOGyDDGvchiKHcGe"], ["activation_digest", "$2a$10$WYHJi/Bk1w9LmRsqEGFE3emlAlDY6KnS6WD/SWuq1Z29bF/1NHIpe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.674740"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-77@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Garret Koepp"], ["email", "example-77@railstutorial.org"], ["created_at", "2020-01-30 08:02:06.911852"], ["updated_at", "2020-01-30 08:02:06.911852"], ["password_digest", "$2a$10$qaKGduUTkRqIHOxaRgxgKOUHwEQKVx5cyvrCLAL.QcqSE5kADo/fa"], ["activation_digest", "$2a$10$M7fs0CHfl7t8tX40fzeX3Oi75mZ2FcjdtfA6GFOXtyZnitSLrdIjS"], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.823387"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-78@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Werner Wilderman"], ["email", "example-78@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.061708"], ["updated_at", "2020-01-30 08:02:07.061708"], ["password_digest", "$2a$10$ASbneWyCLXaKKEwKGzaO.ujNgsvdhp8W2tFYHyZXhK78UThSvR6kS"], ["activation_digest", "$2a$10$tXZnFMAAoe3O2tYANloWOei015olDp6iK2j1N5tJg18xbtxFnF1n."], ["activated", 1], ["activated_at", "2020-01-30 08:02:06.990511"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-79@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evan Graham"], ["email", "example-79@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.214595"], ["updated_at", "2020-01-30 08:02:07.214595"], ["password_digest", "$2a$10$g8jTUpzjVYqwL5uo3/e.1.VO1TTWwQU/4QY9qklcwSnpTQLDVnFBq"], ["activation_digest", "$2a$10$r59gTxzRaDQ5XnfXgdyz..bUowVgc4ETPukNza2T8YccJ1kBAL6XO"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.142295"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-80@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sherman Dach"], ["email", "example-80@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.380031"], ["updated_at", "2020-01-30 08:02:07.380031"], ["password_digest", "$2a$10$2EzKXRt4SWsCkEaq0wIE7OkZD7j8sxYBy8yItsvRubHP.D40EfOj."], ["activation_digest", "$2a$10$oWdy2MYLWtI6F7M6Rbbr7.6O4Rb4yJw8PLT7S1cdz6qnlJ08UJldS"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.307440"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-81@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jonah Cruickshank"], ["email", "example-81@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.539164"], ["updated_at", "2020-01-30 08:02:07.539164"], ["password_digest", "$2a$10$kNFsEsxTHe7wxRQn7DWmaeMgzvDEAytXlXRshq1MOB35nQNl9v3ke"], ["activation_digest", "$2a$10$hrFpvsb32mMWfiBpReeu3.EY7.nx0GPsbyxUs01ResSTD.H8Oyfuq"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.460410"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-82@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rubin Nienow I"], ["email", "example-82@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.682832"], ["updated_at", "2020-01-30 08:02:07.682832"], ["password_digest", "$2a$10$exuWiZpgCzF/B6ciYYFXI.1QFOzXag58GHizXedkAQYdCAiGngFyW"], ["activation_digest", "$2a$10$Uef1BsSGAKjBE4Lzvrd5qe6Dl8E98W55ReyaF5PfdTuRFkFX1okqK"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.609797"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-83@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shauna Zboncak"], ["email", "example-83@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.826071"], ["updated_at", "2020-01-30 08:02:07.826071"], ["password_digest", "$2a$10$GWhmuroYsez3B88CZSRLM.rV9rjdORN8qQtoZVXpoR7xxN60I3.5C"], ["activation_digest", "$2a$10$90xemmNS1IRyyyCPaoHMPeGcQ9qwAv7klV5C3//wYs6gMKrZKSZKe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.752125"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-84@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Dean Nienow"], ["email", "example-84@railstutorial.org"], ["created_at", "2020-01-30 08:02:07.990912"], ["updated_at", "2020-01-30 08:02:07.990912"], ["password_digest", "$2a$10$Xs2/ewOAyXhrBB44SYlffe2YALcRbs8HoWV0SLt9Y0NAaS4ebr3sG"], ["activation_digest", "$2a$10$PHsgypFI3A49DSVhFCd5oeu3CBhlw1amSmr/jXyr3a36bPrjaGAX2"], ["activated", 1], ["activated_at", "2020-01-30 08:02:07.912419"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-85@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Omar Russel"], ["email", "example-85@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.153545"], ["updated_at", "2020-01-30 08:02:08.153545"], ["password_digest", "$2a$10$FkPfuRRmEiXf1gjozpmo2.fveoKh5bscvSanQ1aouLN3mdLXbt8iG"], ["activation_digest", "$2a$10$5gxZ8t3KpEqnvzVh36tmROiNCxPGX21OD8gYqZ6INYv/KXjeTiMaK"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.073412"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-86@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Robert Kirlin"], ["email", "example-86@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.316308"], ["updated_at", "2020-01-30 08:02:08.316308"], ["password_digest", "$2a$10$aXlwAC3cxV4I77kkB3WVSuGdrYt7nKFMMh29mrfmxsiq2c50blLbG"], ["activation_digest", "$2a$10$7pFM3AKOdajXngci5XTCLuKgzu4vfVU/3poGjmEB/Ih3eSg9sahZK"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.239232"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-87@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kip Herman"], ["email", "example-87@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.472011"], ["updated_at", "2020-01-30 08:02:08.472011"], ["password_digest", "$2a$10$uOxUxV7mCAIOc0dTM9l29ek35OEsKYx4kK4LuCTJ/Umhc/vtvrJHS"], ["activation_digest", "$2a$10$8BCbNvXDuviZ5C1pCyyZYOA2UV24VvptVPUDvRLGfAy7bla8nvke2"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.402000"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-88@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eun Wehner"], ["email", "example-88@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.626217"], ["updated_at", "2020-01-30 08:02:08.626217"], ["password_digest", "$2a$10$Vzj/SewGHKtZHiwknAvjN.EaD0Tx.xyCylXLevG7D6hBiM6D/QsqS"], ["activation_digest", "$2a$10$3rmv4NEdx/ixYT5Cr14EuOKOly3POOaqvSjc4epBDSISdjhmwPD16"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.556269"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-89@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Margie Hahn"], ["email", "example-89@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.785812"], ["updated_at", "2020-01-30 08:02:08.785812"], ["password_digest", "$2a$10$EnaxQaDD/tZF9ciADpAmmO7sh9RPI41x3rMPpW7vjUUDSUo0AcZoK"], ["activation_digest", "$2a$10$5lp8/f5GIGlhvMLV/Ep1IuMWISAXUbDnodTfTsuRxGCZhij1aShey"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.715987"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-90@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Maurine Schultz"], ["email", "example-90@railstutorial.org"], ["created_at", "2020-01-30 08:02:08.980269"], ["updated_at", "2020-01-30 08:02:08.980269"], ["password_digest", "$2a$10$MHt7DMrtW6w2UDPdxtYIZeB.j3W7/Tq6FjDlGjahipSOljCnPv51i"], ["activation_digest", "$2a$10$KbeJMAbHyUy1weDvjTcW8OZHCCGylgC/DxMnvZaOj9SRlHmVvlyJm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:08.893316"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-91@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Ronald Harber"], ["email", "example-91@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.151554"], ["updated_at", "2020-01-30 08:02:09.151554"], ["password_digest", "$2a$10$T5hih4C4IcLOR7WQ9O7uvOQI7qn.460Iix4nhLD3p702xOBkOKqtO"], ["activation_digest", "$2a$10$0otmduVUlDViuWll5EVzhORAh9fTwppYv8jxLxDZBy1rGu94uICce"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.076092"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-92@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gaylene Rogahn"], ["email", "example-92@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.310858"], ["updated_at", "2020-01-30 08:02:09.310858"], ["password_digest", "$2a$10$LDLLbN8CmLmjslevtiP.ZOyQ1t37j4rwhk3a4stpmjqMqE4BhEibq"], ["activation_digest", "$2a$10$HhZAekAd5HP8bTyk7ITfNObnz1aw8aM0mJC7nEEZx.APj60UCRqOe"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.239079"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-93@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. German Swaniawski"], ["email", "example-93@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.463106"], ["updated_at", "2020-01-30 08:02:09.463106"], ["password_digest", "$2a$10$0W/MEUvd1t4cVeSrtKrPZeKWKDq9zznt3.NUlS1JLefmSsjAsePeq"], ["activation_digest", "$2a$10$5eCfw.0QvjI.GnIQuI/ALOPXqJuLrF5NiTjP1uP1/1hsD.LM4k50O"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.389481"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-94@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Despina Bradtke"], ["email", "example-94@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.616402"], ["updated_at", "2020-01-30 08:02:09.616402"], ["password_digest", "$2a$10$7GPffjhZupLsrBSur.hixO9IDaZqPrT223l4uVcwVpfvYHSRbXfLW"], ["activation_digest", "$2a$10$Btz31Zgh.xoXmfgInx7FaOUDIPrnpcybEqB9OKkW7QXJEgMmc3jMm"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.542309"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-95@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lyla Stracke"], ["email", "example-95@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.769705"], ["updated_at", "2020-01-30 08:02:09.769705"], ["password_digest", "$2a$10$3LqlvL4q.iEUJJvZ1hygB.tnYqTWFpWw8kRCIn0FOal8A2f4GcBYi"], ["activation_digest", "$2a$10$dBHwakQt.BAUieo3VoTkcuxPmIraoFjPFBPhpXF4QL.8Ro3Oo8Vke"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.699904"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-96@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brigette Hyatt II"], ["email", "example-96@railstutorial.org"], ["created_at", "2020-01-30 08:02:09.924702"], ["updated_at", "2020-01-30 08:02:09.924702"], ["password_digest", "$2a$10$kHcR2PYb0zlTaB9KRpsbselt9H6t1qWrZmyvyww.JZfB8T2iwTMEy"], ["activation_digest", "$2a$10$yn9a8jp3ouwvhpxDEgtKP.eU4eF6m5Xex/i//wQB5s1JrPaji1LXa"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.855479"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-97@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Patrina Langworth"], ["email", "example-97@railstutorial.org"], ["created_at", "2020-01-30 08:02:10.069988"], ["updated_at", "2020-01-30 08:02:10.069988"], ["password_digest", "$2a$10$pJj83iHOdlEO6RMYIZlmi.PPpZt3qEnUzIsnl3T1upxrUbPD6ql96"], ["activation_digest", "$2a$10$A6GwARKaaWcRX38U2cMYd.Hmz6uLeeDtw0IMYdONAXY4H3DDOziCi"], ["activated", 1], ["activated_at", "2020-01-30 08:02:09.994475"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-98@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jame MacGyver"], ["email", "example-98@railstutorial.org"], ["created_at", "2020-01-30 08:02:10.231326"], ["updated_at", "2020-01-30 08:02:10.231326"], ["password_digest", "$2a$10$STsvCsJYDkI7yN7fGxP8FOhc1JBHlEuMg0K3d1QbzLxI6UwUPhedK"], ["activation_digest", "$2a$10$iDFCDZbhtgK5rjIKmMmvROWRYBJXZniSiKmL9SdhkNGal8MM6bI8y"], ["activated", 1], ["activated_at", "2020-01-30 08:02:10.155820"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@railstutorial.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mr. Brent Kassulke"], ["email", "example-99@railstutorial.org"], ["created_at", "2020-01-30 08:02:10.405810"], ["updated_at", "2020-01-30 08:02:10.405810"], ["password_digest", "$2a$10$E9siw/eI9/D1Eyf2jpNx8en4l7Bx1zMwOTc.J6TKU3kxbmiS8TBSK"], ["activation_digest", "$2a$10$FNBHyyj4YZp4hs6uZ.6CFeGHrvMuqA7xvl1UcPrfabEN0P87DoRly"], ["activated", 1], ["activated_at", "2020-01-30 08:02:10.328579"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+Started GET "/users" for ::1 at 2020-01-30 11:14:30 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:8
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  Rendered collection of users/_user.html.erb [30 times] (4.1ms)
+  Rendered users/index.html.erb within layouts/application (275.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 853ms (Views: 825.4ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/logout" for ::1 at 2020-01-30 11:14:32 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DN35jEcGwDqTjHez4GqUdMxIohSl+T/WwTH23zHchKLHDXMn4xRBZftyd1mDUPXZQuzTMDU1p9lZbXG1SIEwIg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:8
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 11:14:32 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 87ms (Views: 85.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-01-30 11:14:34 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 110ms (Views: 106.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2020-01-30 11:14:35 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 103ms (Views: 99.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-30 11:14:54 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KObjrDGZq6iAMPxU7vUmfQdKZ5JGez0IeaAWBt+0bYBNeJweeHbkyQq5Sje6FkWsbyGxnMuWthl+BplpX6pWg==", "user"=>{"name"=>"kira", "email"=>"kira_dura@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:33
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "kira_dura@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kira"], ["email", "kira_dura@mail.ru"], ["created_at", "2020-01-30 08:14:54.636047"], ["updated_at", "2020-01-30 08:14:54.636047"], ["password_digest", "$2a$10$gml2.pr8BeFwz6X8HO0kHu79y9YXrNEY9ReUeRV7zGfJ6xUsfPWqS"], ["activation_digest", "$2a$10$A9CBs./Oq/Vk5Okge8/DgusB8RBbn2yHSzQhQ2La4PsSFhRPDt97e"]]
+  ↳ app/controllers/users_controller.rb:33
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:33
+UserMailer#account_activation: processed outbound mail in 0.7ms
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 2.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/mailers/user_mailer.rb:14:in `account_activation'
+app/controllers/users_controller.rb:34:in `block in create'
+app/controllers/users_controller.rb:32:in `create'
+Started POST "/users" for ::1 at 2020-01-30 11:16:47 +0300
+  
+SyntaxError (/Users/kirillvoitulevich/project/app/controllers/users_controller.rb:81: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:81: syntax error, unexpected end, expecting end-of-input
+Started POST "/users" for ::1 at 2020-01-30 11:17:08 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KObjrDGZq6iAMPxU7vUmfQdKZ5JGez0IeaAWBt+0bYBNeJweeHbkyQq5Sje6FkWsbyGxnMuWthl+BplpX6pWg==", "user"=>{"name"=>"kira", "email"=>"kira_dura@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "kira_dura@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 137ms (Views: 55.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2020-01-30 11:17:27 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10qk9zbEpkY6tmPZoClsdn6TjoEAx2rI7gu4G63rQqwcmi5cktYnGVJIYzPDEw3b8Df/pZAL8sd2Vz9x1Lb2LA==", "user"=>{"name"=>"kira", "email"=>"dura@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dura@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kira"], ["email", "dura@mail.ru"], ["created_at", "2020-01-30 08:17:27.515939"], ["updated_at", "2020-01-30 08:17:27.515939"], ["password_digest", "$2a$10$5ubs8LstC8BWUqvpVWmk8OnVWnQMNbdqZWNlA9IpAo5M/y92JoAqq"], ["activation_digest", "$2a$10$RkpT9/0Sw.NlG8eQWv/PAun97DojBaldC9WISPnVS4LtiIz/ntt52"]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+UserMailer#account_activation: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 1.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/mailers/user_mailer.rb:14:in `account_activation'
+app/controllers/users_controller.rb:32:in `create'
+Started POST "/users" for ::1 at 2020-01-30 11:18:55 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kirillvoitulevich/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10qk9zbEpkY6tmPZoClsdn6TjoEAx2rI7gu4G63rQqwcmi5cktYnGVJIYzPDEw3b8Df/pZAL8sd2Vz9x1Lb2LA==", "user"=>{"name"=>"kira", "email"=>"dura@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dura@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (88.9ms)
+Completed 200 OK in 807ms (Views: 472.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2020-01-30 11:19:26 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fTj9wEBdAoF6VWhkssgVesYDpc2lKNCvm+3eSXUKhOe26Hdr5E+D3hKraI7R8nTXSKfU6TXkSKADsVkjDFcwZw==", "user"=>{"name"=>"kira", "email"=>"d@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "d@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kira"], ["email", "d@mail.ru"], ["created_at", "2020-01-30 08:19:26.683686"], ["updated_at", "2020-01-30 08:19:26.683686"], ["password_digest", "$2a$10$csmGPaZTJ1Sk9CclL/buf.UUUGdO24GK5wHMSGHTGaMTbX5G85swS"], ["activation_digest", "$2a$10$.s.8RSAUIQ4sfpaiFytmZuSRAJ5Pd7mK2x0MPc6Go8RGmPDOOil0G"]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+UserMailer#account_activation: processed outbound mail in 0.7ms
+Completed 500 Internal Server Error in 317ms (ActiveRecord: 10.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/mailers/user_mailer.rb:14:in `account_activation'
+app/controllers/users_controller.rb:32:in `create'
+Started POST "/users" for ::1 at 2020-01-30 11:21:55 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fTj9wEBdAoF6VWhkssgVesYDpc2lKNCvm+3eSXUKhOe26Hdr5E+D3hKraI7R8nTXSKfU6TXkSKADsVkjDFcwZw==", "user"=>{"name"=>"kira", "email"=>"d@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "d@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 134ms (Views: 50.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-30 11:22:04 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9jmGia9p8n8Kmq9mauaZeNErPUEKv+nt5ps5emFKvzA96QwiC3tzIGJkr4wJ3PjVX49MZZpzceJ+x74QGBcLsA==", "user"=>{"name"=>"kira", "email"=>"1@mail.ru", "password"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "1@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kira"], ["email", "1@mail.ru"], ["created_at", "2020-01-30 08:22:04.435079"], ["updated_at", "2020-01-30 08:22:04.435079"], ["password_digest", "$2a$10$8n7oTeHlH4ZTHMGAWspXne9UgYm1XcRjc7mONrvH148Is6799INS."], ["activation_digest", "$2a$10$gL6yn6t/djjXSw6m0PNcteb8D6UFnlfUZCpupj2hQZ6fVVufZ03LC"]]
+  ↳ app/controllers/users_controller.rb:31
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:31
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.4ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (2.0ms)
+UserMailer#account_activation: processed outbound mail in 738.7ms
+Sent mail to 1@mail.ru (14.5ms)
+Date: Thu, 30 Jan 2020 11:22:05 +0300
+From: from@example.com
+To: 1@mail.ru
+Message-ID: <5e32922d4ff07_e1b73fc38fddb390208ef@MacBook-Pro-Kirill.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5e32922d4d11c_e1b73fc38fddb39020781";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5e32922d4d11c_e1b73fc38fddb39020781
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi kira,
+
+Welcome to the Sample App! Click on the link below to activate your account: 
+http://localhost:3000/account_activations/pj-YCJ0dJxbu_NECbcVrYw/edit?email=1%40mail.ru
+
+
+----==_mimepart_5e32922d4d11c_e1b73fc38fddb39020781
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    h1>Sample App</h1>
+<p>Hi kira,</p>
+
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account: 
+</p>
+
+<a href="http://localhost:3000/account_activations/pj-YCJ0dJxbu_NECbcVrYw/edit?email=1%40mail.ru">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5e32922d4d11c_e1b73fc38fddb39020781--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 970ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-30 11:22:05 +0300
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/pj-YCJ0dJxbu_NECbcVrYw/edit?email=1%40mail.ru" for ::1 at 2020-01-30 11:40:26 +0300
+  
+SyntaxError (/Users/kirillvoitulevich/project/app/controllers/account_activations_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+...vated_at, Time.zone.now) log_in user
+...                         ^~~~~~):
+  
+app/controllers/account_activations_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/account_activations/pj-YCJ0dJxbu_NECbcVrYw/edit?email=1%40mail.ru" for ::1 at 2020-01-30 11:41:10 +0300
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"1@mail.ru", "id"=>"pj-YCJ0dJxbu_NECbcVrYw"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/account_activations_controller.rb:4
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/models/user.rb:30:in `authenticated?'
+app/controllers/account_activations_controller.rb:5:in `edit'
+Started GET "/account_activations/pj-YCJ0dJxbu_NECbcVrYw/edit?email=1%40mail.ru" for ::1 at 2020-01-30 11:42:27 +0300
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"1@mail.ru", "id"=>"pj-YCJ0dJxbu_NECbcVrYw"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/account_activations_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/account_activations_controller.rb:6
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["activated", 1], ["updated_at", "2020-01-30 08:42:27.507126"], ["id", 104]]
+  ↳ app/controllers/account_activations_controller.rb:6
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/account_activations_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/account_activations_controller.rb:7
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-01-30 08:42:27.511881"], ["activated_at", "2020-01-30 08:42:27.510816"], ["id", 104]]
+  ↳ app/controllers/account_activations_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/account_activations_controller.rb:7
+Redirected to http://localhost:3000/users/104
+Completed 302 Found in 102ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/users/104" for ::1 at 2020-01-30 11:42:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:8
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 136ms (Views: 131.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/104/edit" for ::1 at 2020-01-30 11:42:40 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/edit.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/104/edit" for ::1 at 2020-01-30 11:54:39 +0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:77
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/edit.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 84ms (Views: 62.6ms | ActiveRecord: 1.5ms)
+
+
