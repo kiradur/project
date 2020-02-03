@@ -1,4 +1,4 @@
-<%= form_with(model: client_card, local: true) do |form| %>
+<%= form_with model: [:user, @client_card] do |form| %>
   <% if client_card.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(client_card.errors.count, "error") %> prohibited this client_card from being saved:</h2>

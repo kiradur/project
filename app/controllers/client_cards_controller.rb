@@ -1,10 +1,13 @@
 class ClientCardsController < ApplicationController
-  before_action :set_client_card, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: %i[create new index]
+  before_action :find_client_card, only: %i[show edit update destroy index]
+
+    rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_client_card_not_found
 
   # GET /client_cards
   # GET /client_cards.json
   def index
-    @client_cards = ClientCard.all
+    @client_cards = @user.client_cards.all
   end
 
   # GET /client_cards/1
@@ -14,7 +17,7 @@ class ClientCardsController < ApplicationController
 
   # GET /client_cards/new
   def new
-    @client_card = ClientCard.new
+    @client_card = @user.client_cards.new
   end
 
   # GET /client_cards/1/edit
@@ -24,16 +27,11 @@ class ClientCardsController < ApplicationController
   # POST /client_cards
   # POST /client_cards.json
   def create
-    @client_card = ClientCard.new(client_card_params)
-
-    respond_to do |format|
-      if @client_card.save
-        format.html { redirect_to @client_card, notice: 'Client card was successfully created.' }
-        format.json { render :show, status: :created, location: @client_card }
-      else
-        format.html { render :new }
-        format.json { render json: @client_card.errors, status: :unprocessable_entity }
-      end
+    @client_card = @user.client_cards.new(client_card_params)
+    if @client_card.save
+      redirect_to root_url
+    else
+      render :new
     end
   end
 
@@ -63,12 +61,16 @@ class ClientCardsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_client_card
-      @client_card = ClientCard.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_card_params
       params.require(:client_card).permit(:title, :user_id, :many, :description, :deadlines, :contract_id, :action_id)
+    end
+    
+    def find_user
+      @user = User.find(params[:user_id])
+    end
+
+    def find_client_card
+      @client_card = ClientCard.find(params[:user_id])
     end
 end

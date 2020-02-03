@@ -14,15 +14,17 @@ ActiveRecord::Schema.define(version: 2020_01_30_085730) do
 
   create_table "client_cards", force: :cascade do |t|
     t.text "title"
-    t.integer "user_id"
     t.integer "many"
     t.text "description"
     t.date "deadlines"
     t.integer "contract_id"
     t.integer "action_id"
     t.integer "source_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_client_cards_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_client_cards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

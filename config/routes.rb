@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
 
-  resources :client_cards
-  resources :users
+  resources :users do
+    resources :client_cards, shallow: true
+  end    
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 

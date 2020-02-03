@@ -9,7 +9,10 @@
       </h1> 
     </section>
   </aside> 
+  
 </div>
 
+<%= link_to 'New Client Card', new_user_client_card_path(@user) %> |
+<%= link_to 'All card', user_client_cards_path(@user) %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

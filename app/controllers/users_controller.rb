@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  before_action :set_users
   
   # GET /users
   # GET /users.json
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @client_cards = @user.client_cards.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -59,7 +61,10 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+    
+    def set_users
+      @user = User.all
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password,
